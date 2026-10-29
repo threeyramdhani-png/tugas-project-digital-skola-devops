@@ -72,6 +72,7 @@ jobs:
         run: pip-audit -r requirements.txt --strict
 
       - name: Audit dev-requirements.txt
+        if: ${{ !cancelled() }}
         run: pip-audit -r dev-requirements.txt --strict
 
   secret_scan_gitleaks:
